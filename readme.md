@@ -1,5 +1,7 @@
 # CineScope: Media Information Database
 
+- The Cinescope Project Report: [Cinescope Project Report](./report.md)
+
 - Business Case: [Business Case](./Business%20Case.pdf)
 
 - Project Constraint and Requirements : [Project Charter](./Project%20Charter.pdf)
