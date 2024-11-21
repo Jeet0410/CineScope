@@ -1,18 +1,19 @@
 # CineScope Project Report
 
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Design Problem](#design-problem)
-   - 2.1 [Problem Definition](#problem-definition)
-   - 2.2 [Project Charter](#project-charter)
+1. [Introduction](#1-introduction)
+2. [Design Problem](#2-design-problem)
+   - 2.1 [Problem Definition](#21-problem-definition)
+   - 2.2 [Project Charter](#22-project-charter)
 3. [Solution](#solution)
-   - 3.1 [Solution 1](#solution-1)
-   - 3.2 [Solution 2](#solution-2)
-   - 3.3 [Final Solution](#final-solution)
+   - 3.1 [Solution 1](#31-solution-1)
+   - 3.2 [Solution 2](#32-solution-2)
+   - 3.3 [Final Solution](#33-final-solution)
 4. [Team Work](#team-work)
 5. [Project Management](#project-management)
 6. [Conclusion and Future Work](#conclusion-and-future-work)
 7. [References](#references)
+
 
 ## 1. Introduction
 CineScope is a web-based media information database designed to provide users with comprehensive details on movies, TV shows, and actors. The platform enhances the user experience through features such as search, review, and rating capabilities, with a unique focus on supporting independent filmmakers. By using MVC architecture, CineScope creates a seamless interaction environment, allowing users to engage with both mainstream and indie content.
