@@ -27,3 +27,63 @@ body {
     font-size: 0.8em;
   }
   
+ /* Centering the form */
+.auth-container {
+    max-width: 400px; /* Limit width */
+    margin: 50px auto; /* Center horizontally */
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .auth-header {
+    background-color: #000; /* Black header */
+    color: #fff; /* White text */
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .auth-body {
+    padding: 20px;
+  }
+  
+  .btn-login {
+    background-color: #ffc107; /* Yellow button */
+    color: #000;
+  }
+  
+  .btn-login:hover {
+    background-color: #e0a800; /* Slightly lighter black */
+  }
+  
+  .btn-signup {
+    background-color: #ffc107; /* Yellow button */
+    color: #000; /* Black text */
+  }
+  
+  .btn-signup:hover {
+    background-color: #e0a800; /* Slightly darker yellow */
+  }
+  
+  /* Page background */
+  body {
+    background-color: #f8f9fa; /* Light gray background */
+  }
+  
+  /* Remove spacing between navbar and carousel */
+header + #latestMoviesCarousel {
+  margin-top: 0;
+}
+
+.mt-5 {
+    margin-top:0;
+}
+
+/* Fullscreen carousel */
+.carousel-item img {
+     /* Make the carousel fill the viewport height */
+  object-fit: cover; /* Ensure image fits without distortion */
+}

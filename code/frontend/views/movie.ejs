@@ -47,9 +47,27 @@
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
               </svg></button>
             </form>
-            <div class="d-flex">
-              <a href="/login" class="btn btn-outline-light me-2">Login</a>
-              <a href="/signup" class="btn btn-warning">Sign-Up</a>
+            <% if (username) { %>
+                <!-- User Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-outline-warning dropdown-toggle"
+                    type="button"
+                    id="userDropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <%= username %>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                  </ul>
+                </div>
+              <% } else { %>
+                <!-- Login and Sign-Up Buttons -->
+                <a href="/login" class="btn btn-outline-light me-2">Login</a>
+                <a href="/signup" class="btn btn-warning">Sign-Up</a>
+              <% } %>
             </div>
           </div>
         </div>
@@ -79,29 +97,43 @@
     </div>
     <hr>
     <div class="mt-5">
-      <h3>User Reviews</h3>
-      <form action="/movie/review" method="POST" class="mb-4">
-        <input type="hidden" name="movie_id" value="<%= movie.id %>">
-        <div class="mb-3">
-          <textarea name="review" class="form-control" rows="4" placeholder="Write your review..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-success">Submit Review</button>
-      </form>
-      <div id="reviews">
-        <% if (movie.reviews) { %>
-          <% movie.reviews.forEach(review => { %>
-            <div class="alert alert-secondary">
-              <%= review %>
-            </div>
-          <% }); %>
-        <% } else { %>
-          <p>No reviews yet.</p>
-        <% } %>
-      </div>
+        <h3>User Reviews</h3>
+        <form action="/movie/<%= movie.id %>/review" method="POST" class="mb-4">
+          <div class="mb-3">
+            <textarea name="review_text" class="form-control" rows="4" placeholder="Write your review..." required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <select name="rating" class="form-select" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Submit Review</button>
+        </form>
+        
+        <div id="reviews">
+            <% if (reviews.length > 0) { %>
+              <% reviews.forEach(review => { %>
+                <div class="alert alert-secondary">
+                  <strong><%= review.username %></strong>: <br><%= review.review_text %> <br>
+                  <small>Rating: <%= review.rating %>/5</small>
+                </div>
+              <% }); %>
+            <% } else { %>
+              <p>No reviews yet.</p>
+            <% } %>
+          </div>      
     </div>
   </main>
   <footer class="bg-dark text-white text-center py-3 mt-5">
     <p>&copy; 2024 CineScope</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
