@@ -53,6 +53,7 @@ router.get("/", async (req, res) => {
         latestMovies,
         additionalLists,
         username: req.session?.username || null,
+        role: req.session?.role || null,
       });
     } catch (error) {
       console.error("Error fetching homepage data:", error.message);
@@ -77,7 +78,11 @@ router.get("/popular", async (req, res) => {
       });
   
       const movies = response.data.results;
-      res.render("popular", { movies });
+      res.render("popular", { 
+        movies,
+      username: req.session?.username || null, // Pass username to the template
+      role: req.session?.role || null, // Pass role to the template
+    });
     } catch (error) {
       console.error("Error fetching movies:", error);
       res.status(500).send("Failed to fetch movies.");
@@ -122,7 +127,12 @@ router.get("/movie/:id", async (req, res) => {
       // Fetch reviews for the movie
       const reviews = await Review.find({ movie_id: id });
   
-      res.render("movie", { movie, reviews });
+      res.render("movie", { 
+        movie,
+        reviews,
+        username: req.session?.username || null, // Pass username to the template
+        role: req.session?.role || null, // Pass role to the template  
+    });
     } catch (error) {
       console.error("Error fetching movie details or reviews:", error.message);
       res.status(500).send("Failed to fetch movie details or reviews.");
@@ -141,6 +151,7 @@ router.post("/login", async (req, res) => {
   
       // Store the username in session or a placeholder (to simulate logged-in state)
       req.session.username = user.username; // Assign username to session
+      req.session.role = user.role;
         console.log("Session after login:", req.session); // Debugging
         res.redirect("/");
     } catch (error) {

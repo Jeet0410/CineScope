@@ -7,6 +7,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
     rel="stylesheet"
   >
+  <link rel="stylesheet" href="/css/style.css">
   <title><%= movie.title %> - CineScope</title>
 </head>
 <body>
@@ -60,6 +61,8 @@
                     <%= username %>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li class="dropdown-item disabled"> &nbsp;Role: <%= role %></li>
+                    <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="/logout">Logout</a></li>
                   </ul>
                 </div>
@@ -110,6 +113,11 @@
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
             </select>
           </div>
           <button type="submit" class="btn btn-success">Submit Review</button>
@@ -120,7 +128,7 @@
               <% reviews.forEach(review => { %>
                 <div class="alert alert-secondary">
                   <strong><%= review.username %></strong>: <br><%= review.review_text %> <br>
-                  <small>Rating: <%= review.rating %>/5</small>
+                  <small>Rating: <%= review.rating %>/10</small>
                 </div>
               <% }); %>
             <% } else { %>
