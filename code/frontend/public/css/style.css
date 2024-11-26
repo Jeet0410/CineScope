@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1em;
+  }
+  
+  main {
+    padding: 2em;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.8em;
+  }
+  
+ /* Centering the form */
+.auth-container {
+    max-width: 400px; /* Limit width */
+    margin: 50px auto; /* Center horizontally */
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .auth-header {
+    background-color: #000; /* Black header */
+    color: #fff; /* White text */
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .auth-body {
+    padding: 20px;
+  }
+  
+  .btn-login {
+    background-color: #ffc107; /* Yellow button */
+    color: #000;
+  }
+  
+  .btn-login:hover {
+    background-color: #e0a800; /* Slightly lighter black */
+  }
+  
+  .btn-signup {
+    background-color: #ffc107; /* Yellow button */
+    color: #000; /* Black text */
+  }
+  
+  .btn-signup:hover {
+    background-color: #e0a800; /* Slightly darker yellow */
+  }
+  
+  /* Page background */
+  body {
+    background-color: #f8f9fa; /* Light gray background */
+  }
+  
+  /* Remove spacing between navbar and carousel */
+header + #latestMoviesCarousel {
+  margin-top: 0;
+}
+
+.mt-5 {
+    margin-top:0;
+}
+
+/* Fullscreen carousel */
+.carousel-item img {
+     /* Make the carousel fill the viewport height */
+  object-fit: cover; /* Ensure image fits without distortion */
+}
+
+/* Uniform image sizes for movie tiles */
+.card-img-top {
+    height: 400px; /* Fixed height for images */
+    object-fit: cover; /* Crop images to fill space */
+  }
+  
+  .card {
+    min-height: 400px; /* Uniform height for cards */
+  }
+  
+  /* Custom navigation button adjustments */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%; /* Make the buttons smaller */
+  }
+  
+  #popular-img {
+    height: 650px; /* Fixed height for images */
+    object-fit: cover; /* Crop images to fill space */
+  }
+
+  #popular-img-title {
+    height: 100px; /* Set a fixed height for the text box */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    text-align: center; /* Center-align the title */
+    overflow: hidden; /* Hide overflowing text */
+  }
+
+#userDropdown {
+    width: 180px;
+}
+
+.dropdown-menu {
+    width: 180px;
+}
