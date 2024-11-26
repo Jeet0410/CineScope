@@ -1,9 +1,40 @@
-# CineScope: Media Information Database
+<div align = "center"> 
+
+# CineScope
+
+</div>
+
+## Project Overview
+Welcome to CineScope, Media Information Database. A seamless experience where user can search, rate and review content all in one place, while also offering independent creators a platform to reach wider audience.
+
+## Contributors
+- [Jeet Patel](https://github.com/Jeet0410) 
+- [Jay Patel](https://github.com/JAY0103) 
+- [Jenil Chaklasiya](https://github.com/Chaklasiya10)
+
+## Process
+- Documentation: [Documentation](./Docs/)
 
 - The Cinescope Project Report: [Cinescope Project Report](./report.md)
 
-- Business Case: [Business Case](./Business%20Case.pdf)
+## Run app on your localhost:
 
-- Project Constraint and Requirements : [Project Charter](./Project%20Charter.pdf)
 
-- Iterative Engineering Design Process: [Design 1 | Design 2](./iterative_engineering_design_process.pdf)
+`Change directory to backend`
+
+        cd code/backend
+
+`[IF REQUIRED] Install any missing dependencies`
+
+        npm install "missing-dependencies"
+
+`Run on your localhost`
+
+        npm start
+
+`Wait for the prompt`
+
+        Server is running on port 3000
+        Connected to MongoDB
+
+### Enjoy CineScope !!
