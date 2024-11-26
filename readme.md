@@ -5,7 +5,7 @@
 </div>
 
 ## Project Overview
-Welcome to CineScope, Media Information Database. A seamless experience where user can search, rate and review content all in one place, while also offering independent creators a platform to reach wider audience.
+CineScope is a web-based media information database designed to provide users with comprehensive details on movies, TV shows, and actors. The platform enhances the user experience through features such as search, review, and rating capabilities, with a unique focus on supporting independent filmmakers. By using MVC architecture, CineScope creates a seamless interaction environment, allowing users to engage with both mainstream and indie content.
 
 ## Contributors
 - [Jeet Patel](https://github.com/Jeet0410) 
@@ -17,7 +17,7 @@ Welcome to CineScope, Media Information Database. A seamless experience where us
 
 - The Cinescope Project Report: [Cinescope Project Report](./report.md)
 
-## Run app on your localhost:
+## Run CineScope on your localhost:
 
 
 `Change directory to backend`
