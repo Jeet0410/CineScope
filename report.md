@@ -1,5 +1,10 @@
 # CineScope Project Report
 
+## Team Members
+- [Jeet Patel (200479073)](https://github.com/Jeet0410) 
+- [Jay Patel (200468891)](https://github.com/JAY0103) 
+- [Jenil Chaklasiya (200477517)](https://github.com/Chaklasiya10)
+
 ## Table of Contents
 1. [Introduction](#1-introduction)
 2. [Design Problem](#2-design-problem)
@@ -9,11 +14,24 @@
    - 3.1 [Solution 1](#31-solution-1)
    - 3.2 [Solution 2](#32-solution-2)
    - 3.3 [Final Solution](#33-final-solution)
-4. [Team Work](#team-work)
-5. [Project Management](#project-management)
-6. [Conclusion and Future Work](#conclusion-and-future-work)
-- [CineScope Run Direction](#run-app-on-your-localhost)
+4. [Team Work](#4-team-work)
+5. [Project Management](#5-project-management)
+6. [Conclusion and Future Work](#6-conclusion-and-future-work)
+7. [Appendix](#run-app-on-your-localhost)
 
+## List of Figures
+
+
+
+## List of Tables
+
+1. [Table 1: Week 1 Meeting](#4-team-work)
+2. [Table 2: Week 2 Meeting](#4-team-work)
+3. [Table 3: Week 4 Meeting](#4-team-work)
+4. [Table 4: Week 6 Meeting](#4-team-work)
+5. [Table 5: Week 7 Meeting](#4-team-work)
+6. [Table 6: Week 9 Meeting](#4-team-work)
+7. [Table 7: Week 11 Meeting](#4-team-work)
 
 ## 1. Introduction
 CineScope is a web-based media information database designed to provide users with comprehensive details on movies, TV shows, and actors. The platform enhances the user experience through features such as search, review, and rating capabilities, with a unique focus on supporting independent filmmakers. By using MVC architecture, CineScope creates a seamless interaction environment, allowing users to engage with both mainstream and indie content.
@@ -22,21 +40,21 @@ CineScope is a web-based media information database designed to provide users wi
 
 ### 2.1 Problem Definition
 - The project addresses the need for a media platform where users can search, review, and rate various media while supporting indie filmmakers. CineScope aims to fill a gap in the market by providing an interactive, community-driven experience that caters to both mainstream audiences and indie creators.
-- Business Case: [Business Case](./Business%20Case.pdf)
+- Business Case: [Business Case](./Docs/Business%20Case.pdf)
 
 ### 2.2 Project Charter
 - The project objectives include developing a functional media information database with an MVC structure, a user-friendly interface, and secure API integration for real-time media updates. We have included privacy and security measures in compliance with GDPR standards to protect user data.
-- Project Constraint and Requirements : [Project Charter](./Project%20Charter.pdf)
+- Project Constraint and Requirements : [Project Charter](./Docs/Project%20Charter.pdf)
 
 ## 3. Solution
 
 ### 3.1 Solution 1
 - This initial approach involved building a media information database with core features like browsing and rating media content. The API integration provided real-time updates, while a simple UI allowed basic user interaction. However, limitations such as the lack of indie support, minimal user engagement features, and insufficient privacy measures led to exploring an improved solution.
-- Iterative Engineering Design Process: [Design 1](./iterative_engineering_design_process.pdf)
+- Iterative Engineering Design Process: [Design 1](./Docs/iterative_engineering_design_process.pdf)
 
 ### 3.2 Solution 2
 - The second iteration introduced support for independent filmmakers, enhanced interactivity (e.g., user profiles, reviews, favorites tracking), and performance optimization through load balancing. Privacy and regulatory compliance were achieved with secure login and GDPR-aligned data handling. Though Solution 2 increased project costs, an MVP approach helped manage expenses.
-- Iterative Engineering Design Process: [Design 2](./iterative_engineering_design_process.pdf)
+- Iterative Engineering Design Process: [Design 2](./Docs/iterative_engineering_design_process.pdf)
 
 ### 3.3 Final Solution
 
@@ -127,7 +145,7 @@ CineScope is a web-based media information database designed to provide users wi
         | Jenil Chaklasiya|Front-End Development  | 85%      | Back-End Development  |
 
 * [Meeting 7:](./Docs/week%2011//)
-    * **Date:** November 20, 2024
+    * **Date:** November 20, 2024 [Week 11]
     * **Agenda**: Last Meeting 
     - [Meeting Agenda](./Docs/week%2011/Week11_Meeting_Agenda.pdf)
     - [Meeting Minutes](./Docs/week%2011/Week11_Meeting_Minutes.pdf)
