@@ -3,6 +3,7 @@ const axios = require("axios");
 const router = express.Router();
 const User = require("../models/User");
 const Review = require("../models/Review");
+const LocalShow = require('../models/LocalShow');
 
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 
@@ -88,6 +89,45 @@ router.get("/popular", async (req, res) => {
       res.status(500).send("Failed to fetch movies.");
     }
   });
+  
+  router.get("/local-shows", async (req, res) => {
+    try {
+      // Fetch local shows from the database
+      const localShows = await LocalShow.find(); // Fetch all local shows
+  
+      res.render("localShows", {
+        username: req.session?.username || null,
+        role: req.session?.role || null,
+        localShows, // Pass fetched local shows to the view
+      });
+    } catch (error) {
+      console.error("Error fetching local shows:", error);
+      res.status(500).send("Failed to load local shows.");
+    }
+  });
+  
+  router.get('/local-shows/:id', async (req, res) => {
+    try {
+      const show = await LocalShow.findById(req.params.id);
+      if (!show) {
+        return res.status(404).send('Local show not found.');
+      }
+  
+      // Fetch reviews associated with the local show
+      const reviews = await Review.find({ movie_id: req.params.id });
+  
+      res.render('localShowDetail', {
+        show,
+        reviews, // Pass reviews to the template
+        username: req.session?.username || null,
+        role: req.session?.role || null,
+      });
+    } catch (error) {
+      console.error('Error fetching local show:', error);
+      res.status(500).send('Failed to load local show.');
+    }
+  });
+  
   
 
 // Search movies
@@ -204,7 +244,32 @@ router.post("/movie/:id/review", async (req, res) => {
     }
   });
   
+  router.post('/local-shows/:id/review', async (req, res) => {
+    const { id } = req.params; // Local show ID
+    const { review_text, rating } = req.body; // Review details from the form
+    const username = req.session?.username; // Username from session
   
+    if (!username) {
+      return res.redirect('/login?action=login'); // Redirect to login if not authenticated
+    }
+  
+    try {
+      const review = new Review({
+        movie_id: id, // Movie ID from the URL
+        username, // Username from session
+        review_text, // Review text from the form
+        rating: parseInt(rating, 10), // Parse rating as a number
+      });
+  
+      await review.save();
+      res.redirect(`/local-shows/${id}`); // Redirect back to the detailed page
+    } catch (error) {
+      console.error('Error submitting review:', error);
+      res.status(500).send('Error submitting review.');
+    }
+  });
+
+
   
 
 // Render Login and Sign-Up page
@@ -226,6 +291,45 @@ router.get("/signup", (req, res) => {
       res.redirect("/"); // Redirect to the home page after logout
     });
   });
+
+  router.get('/dashboard', async (req, res) => {
+    // Ensure the user is logged in and has the Creator role
+    if (!req.session?.role || req.session.role !== 'creator') {
+      return res.status(403).send('Access Denied: Only creators can access the dashboard.');
+    }
+  
+    try {
+      // Fetch the shows created by this user using their username
+      const shows = await LocalShow.find({ creator: req.session.username });
+  
+      res.render('dashboard', {
+        username: req.session.username,
+        role: req.session.role,
+        shows,
+      });
+    } catch (error) {
+      console.error('Error loading dashboard:', error);
+      res.status(500).send('Failed to load dashboard.');
+    }
+  });
+
+  // Route for Add New Show
+  router.get("/add-show", (req, res) => {
+    res.render("under-construction", {
+      username: req.session?.username || null,
+      role: req.session?.role || null,
+    });
+  });
+  
+  
+  // Route for Delete Show
+  router.get('/delete-show', (req, res) => {
+    res.render("under-construction", {
+        username: req.session?.username || null,
+        role: req.session?.role || null,
+      });
+  });
+  
   
   
 

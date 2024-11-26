@@ -32,6 +32,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/popular">Popular Movies</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/local-shows">Local Shows</a>
+              </li>
             </ul>
             <form class="d-flex me-3" action="/search" method="get">
               <input
@@ -60,6 +63,9 @@
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                     <li class="dropdown-item disabled"> &nbsp;Role: <%= role %></li>
                     <li><hr class="dropdown-divider"></li>
+                    <% if (role === 'creator') { %>
+                        <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
+                      <% } %>
                     <li><a class="dropdown-item" href="/logout">Logout</a></li>
                   </ul>
                 </div>
