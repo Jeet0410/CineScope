@@ -169,6 +169,8 @@ CineScope is a web-based media information database designed to provide users wi
 
 ## 6. Conclusion and Future Work
 
+- Lessons Learned Report: [Lessons Learned Report](./Docs/Lessons%20Learned%20Report.pdf)
+
 ### Conclusion
 - CineScope has established itself as a dynamic platform that seamlessly integrates movie discovery with content creation. By providing personalized experiences for users and empowering creators with tools to showcase their work, the platform bridges the gap between mainstream and independent entertainment. Its responsive design, robust backend, and real-time updates ensure a user-friendly and engaging experience. 
 - The successful implementation of features like trending movie carousels, local shows, creator dashboards, and review systems highlights the platform's adaptability and relevance in the competitive entertainment space. CineScope not only meets the immediate needs of its diverse audience but also lays the groundwork for continuous growth and improvement.
@@ -181,6 +183,7 @@ CineScope is a web-based media information database designed to provide users wi
 - **Favorites and Watchlist:** Introduce options for users to save movies or shows into a personal watchlist or favorites section for quick access
 - **Event Calendar Integration:** Create a calendar view for browsing local shows and booking tickets directly through the platform.
 - **Monetization Options:** Introduce premium subscriptions for exclusive content or features like analytics dashboard, and advertising opportunities for creators to promote their shows.
+
 
 
 ## Run app on your localhost:
