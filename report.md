@@ -21,7 +21,7 @@
 
 ## List of Figures
 
-
+1. [Figure 1: Gantt Chart](#5-project-management)
 
 ## List of Tables
 
@@ -160,7 +160,12 @@ CineScope is a web-based media information database designed to provide users wi
 
 
 ## 5. Project Management
-A milestone-based schedule, tracked via GitHub and supported by weekly updates, was implemented to ensure timely completion. The schedule accounted for design, development, and testing phases, with a Gantt chart visualizing progress and identifying critical tasks.
+- A milestone-based schedule, tracked via GitHub and supported by weekly updates, was implemented to ensure timely completion. The schedule accounted for design, development, and testing phases, with a Gantt chart visualizing progress and identifying critical tasks.
+
+- Milestone Based Schedule: [Milestone Based Schedule](./Docs/Milestone_Based_Schedule.pdf)
+
+- Cinescope Gantt Chart: 
+![Cinescope Gantt Chart](./Docs/G-chart.png)
 
 ## 6. Conclusion and Future Work
 
@@ -188,6 +193,10 @@ A milestone-based schedule, tracked via GitHub and supported by weekly updates, 
 `[IF REQUIRED] Install any missing dependencies`
 
         npm install "missing-dependencies"
+
+`[OPTIONAL] If you wish to enjoy local shows functionality, seed the DB with initial data`
+
+        node seedLocalShows.js
 
 `Run on your localhost`
 

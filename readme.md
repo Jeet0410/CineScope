@@ -17,6 +17,8 @@ CineScope is a web-based media information database designed to provide users wi
 
 - The Cinescope Project Report: [Cinescope Project Report](./report.md)
 
+- The Cinescope Presentation: [CineScope Group Presentation](./Docs/CineScope_ppt.pdf)
+
 ## Run CineScope on your localhost:
 
 

@@ -255,7 +255,64 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      
+      <br>
+      <h3>Top Rated Romance Movies</h3>
+<div id="topRatedRomanceCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row">
+        <% additionalLists.topRatedRomance.slice(0, 4).forEach(movie => { %>
+          <div class="col-md-3">
+            <a href="/movie/<%= movie.id %>" class="text-decoration-none text-dark">
+              <div class="card h-100">
+                <img
+                  src="https://image.tmdb.org/t/p/w500<%= movie.poster_path || '' %>"
+                  class="card-img-top img-fluid"
+                  alt="<%= movie.title %>"
+                >
+                <div class="card-body">
+                  <h5 class="card-title"><%= movie.title %></h5>
+                  <p class="card-text">Rating: <%= movie.vote_average %>/10</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    
+    <div class="carousel-item">
+      <div class="row">
+        <% additionalLists.topRatedRomance.slice(4, 8).forEach(movie => { %>
+          <div class="col-md-3">
+            <a href="/movie/<%= movie.id %>" class="text-decoration-none text-dark">
+              <div class="card h-100">
+                <img
+                  src="https://image.tmdb.org/t/p/w500<%= movie.poster_path || '' %>"
+                  class="card-img-top img-fluid"
+                  alt="<%= movie.title %>"
+                >
+                <div class="card-body">
+                  <h5 class="card-title"><%= movie.title %></h5>
+                  <p class="card-text">Rating: <%= movie.vote_average %>/10</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#topRatedRomanceCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#topRatedRomanceCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
 
     <% } %>
   </main>

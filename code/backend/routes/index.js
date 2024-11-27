@@ -42,10 +42,21 @@ router.get("/", async (req, res) => {
             vote_count_gte: 50,
           },
         });
+
+        const topRatedRomanceResponse = await axios.get(`${TMDB_BASE_URL}/discover/movie`, {
+          params: {
+            api_key: process.env.TMDB_API_KEY,
+            language: "en-US",
+            with_genres: 10749, // Genre: Romance
+            sort_by: "vote_average.desc",
+            vote_count_gte: 50, // To ensure valid ratings
+          },
+        });
   
         additionalLists = {
           topRatedAction: topRatedActionResponse.data.results,
           topRatedComedy: topRatedComedyResponse.data.results,
+          topRatedRomance: topRatedRomanceResponse.data.results,
         };
       }
   
@@ -80,7 +91,7 @@ router.get("/popular", async (req, res) => {
   
       const movies = response.data.results;
       res.render("popular", { 
-        movies,
+      movies,
       username: req.session?.username || null, // Pass username to the template
       role: req.session?.role || null, // Pass role to the template
     });
